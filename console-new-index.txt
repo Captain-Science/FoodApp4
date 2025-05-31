@@ -1,0 +1,7 @@
+cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation cdn.tailwindcss.com:64:1711
+Live reload enabled. index.html:70:13
+Loading failed for the module with source “http://127.0.0.1:5500/index.tsx”. index.html:41:45
+Loading module from “http://127.0.0.1:5500/index.tsx” was blocked because of a disallowed MIME type (“application/octet-stream”). index.html
+Ruleset ignored due to bad selector. index.html:14:33
+Error in parsing value for ‘-webkit-text-size-adjust’.  Declaration dropped. index.html:1:2485
+Error in parsing value for ‘background-position’.  Declaration dropped. s3downbar.css:349:28

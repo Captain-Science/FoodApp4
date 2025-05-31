@@ -1,0 +1,6 @@
+{
+  "name": "Grocery Product Reviews",
+  "description": "A social media web application for rating and reviewing health and food products. Users can browse products and articles, leave reviews, mark favorites, and administrators can manage content.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
