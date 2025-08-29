@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grocery Product Reviews</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Custom scrollbar for better aesthetics */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f0fdf4; /* lime-50 / emerald-50 for a light track */
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #86efac; /* lime-300 / emerald-300 */
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #4ade80; /* lime-400 / emerald-400 */
-      }
-      /* Ensure full height for layout */
-      html, body, #root {
-        height: 100%;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.3.1",
-    "react-dom/client": "https://esm.sh/react-dom",
-    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime"
-  }
-}
-</script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Under Maintenance</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #bef264 0%, #4ade80 100%);
+    }
+  </style>
 </head>
-  <body class="bg-lime-50 text-green-800 text-base"> {/* Added text-base for global font size */}
-    <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
-  </body>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full text-center border-2 border-lime-300">
+    <!-- Maintenance Icon -->
+    <svg class="mx-auto mb-4 w-16 h-16 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="22" stroke-width="4" class="text-yellow-200" fill="#fef9c3"/>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 14v10m0 8h.01" />
+    </svg>
+    <h1 class="text-2xl font-bold text-green-800 mb-2">We'll Be Back Soon!</h1>
+    <p class="text-green-700 mb-4">
+      Our site is currently undergoing scheduled maintenance.<br>
+      We apologize for the inconvenience and appreciate your patience.<br>
+      Please check back later.
+    </p>
+    <!-- Area for a photo -->
+    <div class="my-4">
+      <img src="/images/churchpantry.png" alt="Maintenance Photo" class="mx-auto rounded-lg shadow-md max-h-48 object-cover" />
+      <!-- Replace /images/your-photo.jpg with your actual photo path -->
+    </div>
+    <p class="text-xs text-gray-400">— Grocery Product Reviews Team</p>
+  </div>
+</body>
 </html>

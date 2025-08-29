@@ -1,4 +1,4 @@
-Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at file:///home/escher/2025projects/food/food-app4/index.tsx. (Reason: CORS request not http).
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at file:///home/fedora3/2025projects/food/food-app4/index.tsx. (Reason: CORS request not http).
 Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at file:///index.tsx. (Reason: CORS request not http).
 Ruleset ignored due to bad selector. index.html:14:33
 Error in parsing value for ‘-webkit-text-size-adjust’.  Declaration dropped. index.html:1:2485

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Product, Article, User, Review, UserProductInteraction, UserArticleInteraction, ViewMode, SelectedItem, ProductCategory, Event, DiscussionTopic, DiscussionPost, ProductStatus, HeaderNotice, RankedProduct } from './types';
 import { INITIAL_PRODUCTS, INITIAL_ARTICLES, INITIAL_USERS, INITIAL_EVENTS, INITIAL_DISCUSSION_TOPICS, INITIAL_DISCUSSION_POSTS, HEADER_NOTICES as INITIAL_HEADER_NOTICES } from './constants';
@@ -252,7 +251,8 @@ function App(): JSX.Element {
       id: `review-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       userId: currentUser.id,
       userName: currentUser.name,
-      rating, text: reviewText,
+      rating,
+      text: reviewText,
       date: new Date().toISOString().split('T')[0],
     };
     setProducts(prevProducts => prevProducts.map(p => 
@@ -409,7 +409,7 @@ function App(): JSX.Element {
     setDiscussionPosts(prev => [firstPost, ...prev]);
     setShowNewTopicForm(false);
     setViewMode(ViewMode.DiscussionThread);
-    setSelectedItem({ type: 'discussion_topic', id: newTopicId });
+    setSelectedItem({type: 'discussion_topic', id: newTopicId});
     alert('Topic created successfully!');
   };
 
@@ -461,13 +461,13 @@ function App(): JSX.Element {
   
   const featuredArticles = articles.filter(article => article.isFeatured).slice(0, 3);
 
-  const handleFormSubmit = (formType: 'donate' | 'getFood', data: any) => {
+  const handleFormSubmit = (formType: 'donate' | 'getFood', data: any) => { 
     console.log(`${formType} form submitted:`, data); 
     alert('Thank you! Your request has been noted. We will be in touch if a backend is implemented.');
     setViewMode(ViewMode.AllProducts); 
   };
 
-  const renderContent = () => {
+  const renderContent = () => { 
     let itemsToDisplay: React.ReactNode[] = [];
     let title = "Explore Products & Articles";
     let mainContentAreaClasses = "grid grid-cols-1 gap-4 md:gap-6";
@@ -501,12 +501,12 @@ function App(): JSX.Element {
           const articleToView = articles.find(a => a.id === selectedItem.id);
           if (articleToView) {
             title = articleToView.title;
-            itemsToDisplay = [(
+            itemsToDisplay = [( 
               <div key={articleToView.id} className="bg-white rounded-xl shadow-2xl p-6 md:p-8 m-2 text-green-800 border border-lime-200">
                 <img src={articleToView.image} alt={articleToView.title} className="w-full h-64 object-cover rounded-lg mb-6"/>
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-3xl font-bold text-orange-700">{articleToView.title}</h2>
-                     <button onClick={() => toggleFavoriteArticle(articleToView.id)} title={currentUser?.articleInteractions[articleToView.id]?.isFavorited ? "Remove from favorites" : "Add to favorites"} className={`p-2 rounded-full transition-colors duration-200 ${ currentUser?.articleInteractions[articleToView.id]?.isFavorited ? 'text-red-500' : 'text-gray-400 hover:text-red-500' }`} >
+                     <button onClick={() => toggleFavoriteArticle(articleToView.id)} title={currentUser?.articleInteractions[articleToView.id]?.isFavorited ? "Remove from favorites" : "Add to favorites"} className={`p-2 rounded-full transition-colors duration-200 ${ currentUser?.articleInteractions[articleToView.id]?.isFavorited ? 'text-red-500' : 'text-gray-400 hover:text-red-500' }`} > 
                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
                          <path d="M11.645 20.91a.75.75 0 0 0 1.09 0l.752-.705c.27-.25.524-.51.772-.778a50.64 50.64 0 0 0 4.197-5.043c1.48-2.068 1.986-4.568 1.498-6.823-.488-2.254-2.264-4.148-4.616-4.616-2.352-.47-4.803.018-6.871 1.498a.751.751 0 0 1-1.042 0c-2.068-1.48-4.52-1.968-6.871-1.498-2.352.468-4.128 2.362-4.616 4.616-.488 2.255.018 4.755 1.498 6.823a50.64 50.64 0 0 0 4.197 5.043c.248.268.502.528.772.778l.752.705Z" />
                         </svg>
@@ -595,11 +595,11 @@ function App(): JSX.Element {
             if (topic) {
                 title = topic.title;
                 itemsToDisplay = [<DiscussionThreadView 
-                                    key={`thread-${topic.id}`} 
+                                    key={`thread-${topic.id}`}
                                     topic={topic} 
                                     posts={postsForTopic} 
-                                    currentUser={currentUser} 
-                                    onAddPost={handleAddDiscussionPost} 
+                                    currentUser={currentUser}
+                                    onAddPost={handleAddDiscussionPost}
                                     onBackToForum={handleShowDiscussionForum}
                                     isAdmin={currentUser?.isAdmin || false}
                                     onDeletePost={handleDeleteDiscussionPost}
